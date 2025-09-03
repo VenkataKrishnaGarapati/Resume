@@ -7,6 +7,20 @@
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.21/build/spline-viewer.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+    .university-logos {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+    .university-logos img {
+        height: 80px;
+        border-radius: 12px;
+        background: #fff;
+        padding: 5px;
+    }
+    </style>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -703,6 +717,8 @@
                 opacity: 0;
             }
         }
+
+
     </style>
 </head>
 <body>
@@ -749,13 +765,13 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="profile-image">
-                <i class="fas fa-user"></i>
+                <img src="profile.jpg" alt="Profile Photo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
             </div>
             <div class="about-text">
                 <h3>Artificial Intelligence Graduate Student</h3>
-                <p>I'm currently pursuing my Master's in Artificial Intelligence at Northeastern University with a stellar 3.9 GPA. My journey in AI began during my undergraduate studies in Computer Science with a specialization in AI at Amrita Vishwa Vidyapeetham, where I graduated with First Class Distinction.</p>
-                <p>My expertise spans across Natural Language Processing, Computer Vision, and Large Language Models. I've contributed to multiple publications in prestigious conferences including ACL, IEEE, and Springer, and have hands-on experience in developing AI-powered applications that solve real-world problems.</p>
-                <p>I'm passionate about advancing the field of AI through research and practical applications, with a particular interest in emotion-aware systems and multilingual NLP.</p>
+                <p>I'm currently pursuing my Master's in Artificial Intelligence at Northeastern University with a 3.9 GPA. My journey in AI began during my undergraduate studies in Computer Science with a specialization in AI at Amrita Vishwa Vidyapeetham, where I graduated with First Class Distinction.</p>
+                <p>My work spans across Natural Language Processing, Computer Vision, and Large Language Models. I've contributed to multiple publications in prestigious conferences including ACL, IEEE, and Springer, and have hands-on experience in developing AI-powered applications that solve real-world problems.</p>
+                <p>I'm passionate about advancing the field of AI through research and practical applications, with a particular interest in NLP.</p>
                 
                 <div class="stats">
                     <div class="stat-item">
@@ -766,13 +782,14 @@
                         <span class="stat-number">4+</span>
                         <span class="stat-label">Publications</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">20+</span>
-                        <span class="stat-label">AI/ML Patents</span>
-                    </div>
                 </div>
             </div>
         </div>
+        <div class="university-logos">
+    <img src="School_college_Link_Box.jpg" alt="Northeastern University">
+    <img src="7CT8zD0q_400x400.jpg" alt="Amrita University">
+        </div>
+
     </section>
 
     <!-- Skills Section -->
@@ -823,86 +840,108 @@
         </div>
     </section>
 
+
     <!-- Projects Section -->
     <section id="projects" class="section">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3 class="project-title">EmoLingo: Emotion & Tone-Aware Chatbot</h3>
-                <p class="project-description">
-                    Built a sophisticated multi-model chatbot pipeline from scratch, featuring emotion detection, tone analysis, and CEFR-level proficiency classification. The system personalizes responses based on user emotions and language proficiency.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">RoBERTa</span>
-                    <span class="tech-tag">T5</span>
-                    <span class="tech-tag">Electra</span>
-                    <span class="tech-tag">DistilBERT</span>
-                    <span class="tech-tag">LLaMA3-70B</span>
-                    <span class="tech-tag">Streamlit</span>
-                    <span class="tech-tag">LoRA</span>
-                </div>
-                <p class="project-description">
-                    <strong>Key Achievements:</strong><br>
-                    • 60.8% F1 score for multi-label emotion detection on GoEmotions<br>
-                    • 66% macro F1 for CEFR proficiency classification<br>
-                    • 77.8% accuracy for tone detection across 12 styles<br>
-                    • First to apply CEFR classification for real-time chatbot personalization
-                </p>
-                <div class="project-links">
-                    <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <h3 class="project-title">Semi-Supervised Flood Detection</h3>
-                <p class="project-description">
-                    Developed an advanced flood detection system using satellite imagery with ResNet-18 architecture. The system achieves exceptional accuracy in detecting turbid water floods for emergency response support.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">ResNet-18</span>
-                    <span class="tech-tag">Sentinel-2A</span>
-                    <span class="tech-tag">Computer Vision</span>
-                    <span class="tech-tag">Transfer Learning</span>
-                    <span class="tech-tag">PyTorch</span>
-                </div>
-                <p class="project-description">
-                    <strong>Key Achievements:</strong><br>
-                    • 98.3% accuracy on Louisiana flood dataset<br>
-                    • 0.94 precision and 0.95 recall<br>
-                    • Published in Springer LNNS, ICACECS 2023<br>
-                    • Optimized for emergency response applications
-                </p>
-                <div class="project-links">
-                    <a href="#" class="project-link"><i class="fas fa-file-alt"></i> Paper</a>
-                    <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <h3 class="project-title">Telugu News Understanding Enhancement</h3>
-                <p class="project-description">
-                    Advanced NLP research project focused on improving understanding of Telugu news content through state-of-the-art language models and regional language processing techniques.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">NLP</span>
-                    <span class="tech-tag">Telugu Language</span>
-                    <span class="tech-tag">Transformers</span>
-                    <span class="tech-tag">BERT</span>
-                    <span class="tech-tag">Regional Languages</span>
-                </div>
-                <p class="project-description">
-                    <strong>Impact:</strong><br>
-                    • Published at ACL DravidianLangTech Workshop, RANLP 2023<br>
-                    • Advanced regional language processing capabilities<br>
-                    • Contributed to multilingual NLP research
-                </p>
-                <div class="project-links">
-                    <a href="#" class="project-link"><i class="fas fa-file-alt"></i> ACL Paper</a>
-                </div>
-            </div>
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <!-- Music Reconstruction -->
+        <div class="project-card">
+          <h3 class="project-title">Music Reconstruction using Genetic Algorithms</h3>
+          <p class="project-description">Reconstructing music from MIDI components using genetic algorithms and LLMs to create improved musical samples.</p>
+          <div class="project-links">
+            <a href="https://github.com/VenkataKrishnaGarapati/Music-Reconstruction" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
         </div>
+
+        <!-- Color Sorting Robot -->
+        <div class="project-card">
+          <h3 class="project-title">Color Sorting Robot in Gazebo</h3>
+          <p class="project-description">Gazebo simulation of a robotic manipulator sorting blocks by color using vision-based detection and Python control logic.</p>
+          <div class="project-links">
+            <a href="https://github.com/VenkataKrishnaGarapati/Color-sorting-robot-using-Gazebo" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Image Dehazing -->
+        <div class="project-card">
+          <h3 class="project-title">Satellite Image Dehazing Performance Study</h3>
+          <p class="project-description">Evaluating dehazing algorithms on satellite imagery with synthetic haze generation and metric-based comparisons.</p>
+          <div class="project-links">
+            <a href="https://github.com/VenkataKrishnaGarapati/Performance-of-image-dehazing-algorithms-on-satellite-images" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Gesture Controlled Computer -->
+        <div class="project-card">
+          <h3 class="project-title">Hand Gesture Computer Control (Socket)</h3>
+          <p class="project-description">Raspberry Pi-based system using OpenCV and socket programming to transmit hand gesture data for controlling computers remotely.</p>
+          <div class="project-links">
+            <a href="https://github.com/VenkataKrishnaGarapati/Socket-programming-for-computer-control-using-Hand-Gestures" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- SVM Mathematical Analysis -->
+        <div class="project-card">
+          <h3 class="project-title">Understanding SVM for Binary Classification</h3>
+          <p class="project-description">Mathematical and programmatic (MATLAB) exploration of SVMs for binary classification using hard margin optimization with CVX.</p>
+          <div class="project-links">
+            <a href="https://github.com/VenkataKrishnaGarapati/Understanding-SVM-for-binary-classification" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Skin Cancer AI -->
+        <div class="project-card">
+          <h3 class="project-title">Skin Cancer Detection AI</h3>
+          <p class="project-description">ML model to analyze dermoscopic images and detect early-stage skin cancer for timely diagnosis and treatment.</p>
+          <div class="project-links">
+            <a href="https://github.com/VenkataKrishnaGarapati/cancer_detect_ai_skincancer" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+      </div>
     </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section">
+      <h2 class="section-title">Publications</h2>
+      <ul class="publication-list">
+        <li>
+          <a href="https://link.springer.com/chapter/10.1007/978-981-96-0451-7_11" target="_blank">
+            <strong>Semi-Supervised Flood Damage Detection Using Satellite Images</strong> – Springer, 2025
+          </a>
+        </li>
+        <li>
+          <a href="https://link.springer.com/chapter/10.1007/978-981-99-9043-6_11#chapter-info" target="_blank">
+            <strong>Enhancing Chatbot Interaction with Emotion Detection: EmoBot</strong> – Springer Nature, 2024
+          </a>
+        </li>
+        <li>
+          <a href="https://aclanthology.org/2023.dravidianlangtech-1.14/" target="_blank">
+            <strong>Enhancing Telugu News Understanding with ML Algorithms</strong> – ACL Workshop, 2023
+          </a>
+        </li>
+        <li>
+          <a href="https://ieeexplore.ieee.org/document/10306580" target="_blank">
+            <strong>Zigbee-Based Home Monitoring System using WSN</strong> – IEEE, 2023
+          </a>
+        </li>
+      </ul>
+    </section>
+
 
     <!-- Experience Section -->
     <section id="experience" class="section">
@@ -982,20 +1021,17 @@
                     <a href="https://linkedin.com/in/g-krishna-rayalu" class="social-link" target="_blank">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" class="social-link">
+                    <a href="https://github.com/VenkataKrishnaGarapati" class="social-link" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-link">
+                    <a href="mailto:gkrishnarayalu@gmail.com" class="social-link">
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>
             </div>
             
             <div class="contact-form">
-                <form>
+                <form action="https://formspree.io/f/mwpnwkod" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -1040,7 +1076,6 @@
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
