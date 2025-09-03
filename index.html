@@ -67,11 +67,23 @@
     .btn-secondary { background: transparent; color: #00d4ff; border: 2px solid #00d4ff; }
     .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,212,255,.3); }
 
-    .spline-container {
+    .hero-image-container {
       height: 500px; animation: slideInRight 1s ease-out .8s both; border-radius: 20px; overflow: hidden;
-      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center;
     }
-    spline-viewer { width: 100%; height: 100%; border-radius: 20px; }
+    .hero-profile-image {
+      width: 400px; height: 400px; border-radius: 20px; background: linear-gradient(135deg,#00d4ff,#ff006e);
+      display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 6px;
+    }
+    .hero-profile-image img {
+      width: 100%; height: 100%; object-fit: cover; border-radius: 15px; position: relative; z-index: 2;
+    }
+    .hero-fallback-icon {
+      display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;
+    }
+    .hero-fallback-icon i {
+      font-size: 10rem; color: #00d4ff; z-index: 1;
+    }
 
     /* Sections */
     .section { padding: 6rem 0; max-width: 1200px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; }
@@ -217,20 +229,28 @@
       transform-origin: left; transform: scaleX(0); z-index: 9999;
     }
 
-    /* Particles */
-    .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
-    .particle { position: absolute; width: 2px; height: 2px; background: #00d4ff; border-radius: 50%; animation: float 6s infinite linear; opacity: .6; }
-    @keyframes float {
-      0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-      10% { opacity: .6; }
-      90% { opacity: .6; }
-      100% { transform: translateY(-10px) translateX(100px); opacity: 0; }
+    /* AI Neural Network Background */
+    .ai-background { 
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+      pointer-events: none; z-index: -1; overflow: hidden;
+    }
+    .node { 
+      position: absolute; width: 4px; height: 4px; background: #00d4ff; 
+      border-radius: 50%; opacity: 0.6; 
+    }
+    .connection { 
+      position: absolute; height: 1px; background: linear-gradient(90deg, transparent, #00d4ff, transparent); 
+      opacity: 0.3; transform-origin: left center;
+    }
+    .floating-code { 
+      position: absolute; font-family: 'Courier New', monospace; font-size: 12px; 
+      color: #00d4ff; opacity: 0.2; white-space: nowrap;
     }
   </style>
 </head>
 <body>
   <div class="scroll-indicator"></div>
-  <div class="particles" id="particles"></div>
+  <div class="ai-background" id="ai-background"></div>
 
   <!-- Navigation -->
   <nav class="navbar">
@@ -261,8 +281,13 @@
           <a href="#contact" class="btn btn-secondary">Let's Connect</a>
         </div>
       </div>
-      <div class="spline-container">
-        <spline-viewer url="https://prod.spline.design/6Wq1Q7YGyM2ov4bV/scene.splinecode" loading-anim-type="spinner-big-dark"></spline-viewer>
+      <div class="hero-image-container">
+        <div class="hero-profile-image">
+          <img src="profile.jpg" alt="Venkata Krishna Rayalu Garapati" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="hero-fallback-icon" style="display:none;">
+            <i class="fas fa-user-graduate"></i>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -272,8 +297,8 @@
     <h2 class="section-title">About Me</h2>
     <div class="about-content">
       <div class="profile-image">
-        <img src="./profile.jpg" alt="Venkata Krishna Rayalu Garapati Profile Photo" onerror="console.log('Image failed to load: profile.jpg'); this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <i class="fas fa-user" style="display:none; font-size: 8rem; color: #00d4ff; position: absolute;"></i>
+        <img src="profile.jpg" alt="Venkata Krishna Rayalu Garapati Profile Photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <i class="fas fa-user-graduate" style="display:none; font-size: 8rem; color: #00d4ff; position: absolute;"></i>
       </div>
       <div class="about-text">
         <h3>Artificial Intelligence Graduate Student</h3>
@@ -286,12 +311,8 @@
             <span class="stat-label">Current GPA</span>
           </div>
           <div class="stat-item">
-            <span class="stat-number">4+</span>
+            <span class="stat-number">4</span>
             <span class="stat-label">Publications</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">20+</span>
-            <span class="stat-label">AI/ML Patents</span>
           </div>
         </div>
       </div>
@@ -306,13 +327,13 @@
         <img src="School_college_Link_Box.jpg" alt="Northeastern University" class="edu-card-logo"/>
         <h3 class="card-title">Northeastern University</h3>
         <p class="card-description">M.S. in Artificial Intelligence • 2024–2026 (expected)</p>
-        <div class="edu-meta">Focus: NLP, Computer Vision, LLMs</div>
+        <div class="edu-meta">GPA: 3.9/4.0 • Focus: NLP, Computer Vision, LLMs</div>
       </div>
       <div class="card">
         <img src="7CT8zD0q_400x400.jpg" alt="Amrita Vishwa Vidyapeetham" class="edu-card-logo"/>
         <h3 class="card-title">Amrita Vishwa Vidyapeetham</h3>
         <p class="card-description">B.Tech in CSE (AI) • First Class with Distinction</p>
-        <div class="edu-meta">Projects: CV, NLP, IoT systems</div>
+        <div class="edu-meta">GPA: 8.13/10.0 • Projects: CV, NLP, IoT systems</div>
       </div>
     </div>
   </section>
@@ -357,9 +378,9 @@
     <div class="cards-grid">
       <div class="card">
         <h3 class="card-title">Music Reconstruction using Genetic Algorithms</h3>
-        <p class="card-description">Reconstructing music from MIDI components using genetic algorithms and LLMs to create improved musical samples.</p>
+        <p class="card-description">Music Reconstruction using Genetic Algorithms and LLMs - a forked project exploring the reconstruction and enhancement of musical compositions. The system decomposes MIDI files into individual components and applies genetic algorithms for optimization, using evolutionary computation principles to evolve musical patterns. Incorporates fitness functions based on harmonic progression, rhythm coherence, and melodic structure, with Large Language Model integration for contextual understanding of musical styles and genres.</p>
         <div class="card-tech">
-          <span class="tech-tag">Genetic Algorithms</span><span class="tech-tag">Python</span><span class="tech-tag">LLMs</span>
+          <span class="tech-tag">Genetic Algorithms</span><span class="tech-tag">Python</span><span class="tech-tag">LLMs</span><span class="tech-tag">MIDI Processing</span><span class="tech-tag">Audio Analysis</span>
         </div>
         <div class="card-links">
           <a href="https://github.com/VenkataKrishnaGarapati/Music-Reconstruction" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a>
@@ -367,9 +388,9 @@
       </div>
       <div class="card">
         <h3 class="card-title">Color Sorting Robot in Gazebo</h3>
-        <p class="card-description">Gazebo simulation of a robotic manipulator sorting blocks by color using vision-based detection and Python control logic.</p>
+        <p class="card-description">A robotic automation system developed in Gazebo simulation environment for automated color-based object sorting. The project features a robotic manipulator equipped with computer vision capabilities using OpenCV for real-time color detection and object recognition. Includes path planning algorithms for robot movement, inverse kinematics solutions for object manipulation, and integration with ROS (Robot Operating System) for communication between vision processing, motion planning, and control modules.</p>
         <div class="card-tech">
-          <span class="tech-tag">Gazebo</span><span class="tech-tag">OpenCV</span><span class="tech-tag">Python</span>
+          <span class="tech-tag">Gazebo</span><span class="tech-tag">OpenCV</span><span class="tech-tag">Python</span><span class="tech-tag">ROS</span><span class="tech-tag">Computer Vision</span><span class="tech-tag">Robotics</span>
         </div>
         <div class="card-links">
           <a href="https://github.com/VenkataKrishnaGarapati/Color-sorting-robot-using-Gazebo" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a>
@@ -377,9 +398,9 @@
       </div>
       <div class="card">
         <h3 class="card-title">Satellite Image Dehazing Performance Study</h3>
-        <p class="card-description">Evaluating dehazing algorithms on satellite imagery with synthetic haze generation and metric-based comparisons.</p>
+        <p class="card-description">A comprehensive study evaluating various image dehazing algorithms specifically applied to satellite imagery. The research focuses on atmospheric haze removal techniques for satellite imagery enhancement, implementing and comparing multiple dehazing algorithms including Dark Channel Prior and other state-of-the-art approaches. The study analyzes algorithm performance under varying atmospheric conditions and provides insights for satellite image preprocessing in remote sensing applications.</p>
         <div class="card-tech">
-          <span class="tech-tag">OpenCV</span><span class="tech-tag">Image Processing</span><span class="tech-tag">Python</span>
+          <span class="tech-tag">OpenCV</span><span class="tech-tag">Image Processing</span><span class="tech-tag">Python</span><span class="tech-tag">Remote Sensing</span><span class="tech-tag">Computer Vision</span>
         </div>
         <div class="card-links">
           <a href="https://github.com/VenkataKrishnaGarapati/Performance-of-image-dehazing-algorithms-on-satellite-images" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a>
@@ -387,9 +408,9 @@
       </div>
       <div class="card">
         <h3 class="card-title">Hand Gesture Computer Control (Socket)</h3>
-        <p class="card-description">Raspberry Pi-based system using OpenCV and socket programming to transmit hand gesture data for remote control.</p>
+        <p class="card-description">An IoT-based human-computer interaction system enabling touchless computer control through hand gesture recognition. Built on Raspberry Pi platform with real-time computer vision processing using OpenCV for gesture detection and tracking. Features socket programming architecture for wireless communication between the Raspberry Pi sensor unit and target computers, enabling applications in presentation control, media playback, and accessibility assistance.</p>
         <div class="card-tech">
-          <span class="tech-tag">Raspberry Pi</span><span class="tech-tag">OpenCV</span><span class="tech-tag">Sockets</span>
+          <span class="tech-tag">Raspberry Pi</span><span class="tech-tag">OpenCV</span><span class="tech-tag">Sockets</span><span class="tech-tag">IoT</span><span class="tech-tag">Machine Learning</span>
         </div>
         <div class="card-links">
           <a href="https://github.com/VenkataKrishnaGarapati/Socket-programming-for-computer-control-using-Hand-Gestures" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a>
@@ -397,9 +418,9 @@
       </div>
       <div class="card">
         <h3 class="card-title">Understanding SVM for Binary Classification</h3>
-        <p class="card-description">Mathematical and programmatic (MATLAB) exploration of SVMs using hard-margin optimization with CVX.</p>
+        <p class="card-description">A comprehensive theoretical and practical study of Support Vector Machines focusing on binary classification problems. The project implements SVM algorithms using mathematical optimization principles, exploring both hard-margin and soft-margin formulations. Utilizes CVX optimization toolbox in MATLAB for solving quadratic programming problems in SVM training, with analysis of kernel functions, hyperparameter tuning strategies, and geometric interpretation of decision boundaries.</p>
         <div class="card-tech">
-          <span class="tech-tag">SVM</span><span class="tech-tag">Matlab</span><span class="tech-tag">CVX</span>
+          <span class="tech-tag">SVM</span><span class="tech-tag">Matlab</span><span class="tech-tag">CVX</span><span class="tech-tag">Optimization</span><span class="tech-tag">Machine Learning</span>
         </div>
         <div class="card-links">
           <a href="https://github.com/VenkataKrishnaGarapati/Understanding-SVM-for-binary-classification" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a>
@@ -407,9 +428,9 @@
       </div>
       <div class="card">
         <h3 class="card-title">Skin Cancer Detection AI</h3>
-        <p class="card-description">ML model to analyze dermoscopic images and detect early-stage skin cancer for timely diagnosis and treatment.</p>
+        <p class="card-description">A medical AI system for skin cancer detection using dermoscopic image analysis. Implemented using Jupyter Notebook, the project employs computer vision techniques for image preprocessing, feature extraction, and lesion segmentation. Built with machine learning models using Scikit-Learn, incorporating feature engineering including texture analysis, asymmetry detection, border irregularity assessment, and color variation analysis based on dermatological criteria for skin cancer detection.</p>
         <div class="card-tech">
-          <span class="tech-tag">Scikit-Learn</span><span class="tech-tag">Python</span><span class="tech-tag">Computer Vision</span>
+          <span class="tech-tag">Scikit-Learn</span><span class="tech-tag">Python</span><span class="tech-tag">Computer Vision</span><span class="tech-tag">Medical AI</span><span class="tech-tag">Image Processing</span>
         </div>
         <div class="card-links">
           <a href="https://github.com/VenkataKrishnaGarapati/cancer_detect_ai_skincancer" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a>
@@ -424,9 +445,9 @@
     <div class="cards-grid">
       <div class="card">
         <h3 class="card-title">Semi-Supervised Flood Damage Detection Using Satellite Images</h3>
-        <p class="card-description">ResNet-18 based semi-supervised framework for mapping flood extents in turbid waters; transfer-learned on Louisiana dataset.</p>
+        <p class="card-description">Published research presenting a novel semi-supervised deep learning framework for automated flood extent mapping using satellite imagery. Developed a ResNet-18 based architecture for handling turbid water conditions and atmospheric interference. The framework leverages limited labeled data through transfer learning techniques and implements data augmentation strategies and pseudo-labeling techniques for learning from unlabeled satellite imagery. The system processes Sentinel-2A multispectral data and contributes to disaster response capabilities and environmental monitoring systems.</p>
         <div class="card-tech">
-          <span class="tech-tag">PyTorch</span><span class="tech-tag">ResNet-18</span><span class="tech-tag">Sentinel-2A</span><span class="tech-tag">Computer Vision</span>
+          <span class="tech-tag">PyTorch</span><span class="tech-tag">ResNet-18</span><span class="tech-tag">Sentinel-2A</span><span class="tech-tag">Computer Vision</span><span class="tech-tag">Remote Sensing</span><span class="tech-tag">Deep Learning</span>
         </div>
         <div class="card-links">
           <a href="https://link.springer.com/chapter/10.1007/978-981-96-0451-7_11" target="_blank" class="card-link"><i class="fas fa-file-alt"></i> Springer</a>
@@ -435,9 +456,9 @@
 
       <div class="card">
         <h3 class="card-title">Enhancing Chatbot Interaction with Emotion Detection: EmoBot</h3>
-        <p class="card-description">Emotion-aware chatbot that adapts explanations and style based on detected user emotions to improve comprehension.</p>
+        <p class="card-description">Research in affective computing presenting EmoBot, an emotionally intelligent conversational AI system that dynamically adapts its communication style based on real-time user emotion detection. Developed NLP models using transformer architectures for emotion recognition from text. The system implements context-aware response generation that modifies explanation complexity, tone, and content delivery strategies based on detected emotional states. Integrates sentiment analysis pipelines with personalized user profiling to enhance conversational memory and emotional intelligence.</p>
         <div class="card-tech">
-          <span class="tech-tag">NLP</span><span class="tech-tag">Emotion Detection</span><span class="tech-tag">Transformers</span>
+          <span class="tech-tag">NLP</span><span class="tech-tag">Emotion Detection</span><span class="tech-tag">Transformers</span><span class="tech-tag">Affective Computing</span><span class="tech-tag">Conversational AI</span>
         </div>
         <div class="card-links">
           <a href="https://link.springer.com/chapter/10.1007/978-981-99-9043-6_11#chapter-info" target="_blank" class="card-link"><i class="fas fa-file-alt"></i> Springer Nature</a>
@@ -446,9 +467,9 @@
 
       <div class="card">
         <h3 class="card-title">Enhancing Telugu News Understanding</h3>
-        <p class="card-description">Comparative study of ML algorithms for Telugu news categorization; W2V-skip-gram with polynomial SVM performed best.</p>
+        <p class="card-description">Research study published in ACL focusing on automatic categorization of Telugu news articles using machine learning techniques. Conducted comparative analysis of multiple algorithms including traditional approaches (TF-IDF, N-grams) and modern embedding methods (Word2Vec, FastText, BERT-based models). Developed a preprocessing pipeline specifically designed for Telugu text, handling morphological variations and linguistic nuances. The study found that Word2Vec skip-gram model combined with polynomial Support Vector Machines performed well for Telugu news classification, contributing to low-resource language processing research.</p>
         <div class="card-tech">
-          <span class="tech-tag">Word2Vec</span><span class="tech-tag">SVM</span><span class="tech-tag">NLP</span>
+          <span class="tech-tag">Word2Vec</span><span class="tech-tag">SVM</span><span class="tech-tag">NLP</span><span class="tech-tag">Low-Resource Languages</span><span class="tech-tag">Text Classification</span>
         </div>
         <div class="card-links">
           <a href="https://aclanthology.org/2023.dravidianlangtech-1.14/" target="_blank" class="card-link"><i class="fas fa-file-alt"></i> ACL Anthology</a>
@@ -457,9 +478,9 @@
 
       <div class="card">
         <h3 class="card-title">Zigbee-Based Home Monitoring System using WSN</h3>
-        <p class="card-description">Energy-efficient data collection and cloud storage pipeline for distributed sensor networks using Zigbee.</p>
+        <p class="card-description">Published IEEE research presenting an Internet of Things (IoT) solution for home automation and environmental monitoring using Wireless Sensor Networks. Designed and implemented a Zigbee-based architecture supporting multiple sensor nodes for temperature, humidity, motion detection, air quality monitoring, and security applications. Developed energy-efficient communication protocols and created a cloud storage pipeline with real-time data analytics, alert generation, and mobile application integration for remote monitoring. The system demonstrates mesh networking capabilities and fault tolerance mechanisms for smart home applications.</p>
         <div class="card-tech">
-          <span class="tech-tag">IoT</span><span class="tech-tag">Zigbee</span><span class="tech-tag">WSN</span><span class="tech-tag">Cloud</span>
+          <span class="tech-tag">IoT</span><span class="tech-tag">Zigbee</span><span class="tech-tag">WSN</span><span class="tech-tag">Cloud</span><span class="tech-tag">Smart Home</span><span class="tech-tag">Embedded Systems</span>
         </div>
         <div class="card-links">
           <a href="https://ieeexplore.ieee.org/document/10306580" target="_blank" class="card-link"><i class="fas fa-file-alt"></i> IEEE Xplore</a>
@@ -568,17 +589,95 @@
   </footer>
 
   <script>
-    // Particles
-    function createParticles() {
-      const particlesContainer = document.getElementById('particles');
-      for (let i = 0; i < 50; i++) {
-        const p = document.createElement('div');
-        p.classList.add('particle');
-        p.style.left = Math.random() * 100 + '%';
-        p.style.animationDelay = Math.random() * 6 + 's';
-        p.style.animationDuration = (Math.random() * 3 + 3) + 's';
-        particlesContainer.appendChild(p);
+    // AI Neural Network Background Animation
+    function createAIBackground() {
+      const container = document.getElementById('ai-background');
+      const nodes = [];
+      const connections = [];
+      const codeSnippets = ['AI', 'ML', 'NLP', 'CNN', 'RNN', 'GPU', 'API', 'def', 'import', 'torch', 'model', 'train'];
+      
+      // Create nodes
+      for (let i = 0; i < 30; i++) {
+        const node = document.createElement('div');
+        node.classList.add('node');
+        node.style.left = Math.random() * 100 + '%';
+        node.style.top = Math.random() * 100 + '%';
+        node.style.animationDelay = Math.random() * 5 + 's';
+        container.appendChild(node);
+        nodes.push({
+          element: node,
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5
+        });
       }
+      
+      // Create floating code snippets
+      for (let i = 0; i < 15; i++) {
+        const code = document.createElement('div');
+        code.classList.add('floating-code');
+        code.textContent = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+        code.style.left = Math.random() * 100 + '%';
+        code.style.top = Math.random() * 100 + '%';
+        code.style.animationDelay = Math.random() * 10 + 's';
+        container.appendChild(code);
+        
+        // Animate code floating
+        setInterval(() => {
+          const newX = Math.random() * 100;
+          const newY = Math.random() * 100;
+          code.style.transition = 'all 15s ease-in-out';
+          code.style.left = newX + '%';
+          code.style.top = newY + '%';
+        }, 15000 + Math.random() * 10000);
+      }
+      
+      // Animate nodes and create connections
+      function animateNetwork() {
+        nodes.forEach((node, i) => {
+          // Update node position
+          node.x += node.vx;
+          node.y += node.vy;
+          
+          // Bounce off walls
+          if (node.x <= 0 || node.x >= window.innerWidth) node.vx *= -1;
+          if (node.y <= 0 || node.y >= window.innerHeight) node.vy *= -1;
+          
+          node.element.style.left = node.x + 'px';
+          node.element.style.top = node.y + 'px';
+          
+          // Create connections to nearby nodes
+          nodes.slice(i + 1).forEach((otherNode, j) => {
+            const distance = Math.sqrt(
+              Math.pow(node.x - otherNode.x, 2) + Math.pow(node.y - otherNode.y, 2)
+            );
+            
+            if (distance < 150) {
+              const connectionId = `connection-${i}-${j}`;
+              let connection = document.getElementById(connectionId);
+              
+              if (!connection) {
+                connection = document.createElement('div');
+                connection.id = connectionId;
+                connection.classList.add('connection');
+                container.appendChild(connection);
+              }
+              
+              const angle = Math.atan2(otherNode.y - node.y, otherNode.x - node.x);
+              connection.style.left = node.x + 'px';
+              connection.style.top = node.y + 'px';
+              connection.style.width = distance + 'px';
+              connection.style.transform = `rotate(${angle}rad)`;
+              connection.style.opacity = (150 - distance) / 500;
+            }
+          });
+        });
+        
+        requestAnimationFrame(animateNetwork);
+      }
+      
+      animateNetwork();
     }
 
     // Smooth scrolling (do NOT prevent default submit)
@@ -635,8 +734,8 @@
     style.textContent = `@keyframes pulse { 0%{transform:scale(1)} 50%{transform:scale(1.1)} 100%{transform:scale(1)} }`;
     document.head.appendChild(style);
 
-    // Initialize particles
-    createParticles();
+    // Initialize AI background animation
+    createAIBackground();
 
     // Spline viewer logging
     document.addEventListener('DOMContentLoaded', function() {
