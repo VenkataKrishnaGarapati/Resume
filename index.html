@@ -173,7 +173,7 @@
     .timeline-description li { margin-bottom: .5rem; }
 
     /* Contact */
-    .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-content { max-width: 760px; margin: 0 auto; }
     .contact-info { color: white; }
     .contact-info h3 { color: #00d4ff; margin-bottom: 1rem; font-size: 1.5rem; }
     .contact-item {
@@ -191,19 +191,6 @@
       border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all .3s ease;
     }
     .social-link:hover { background: linear-gradient(135deg,#00d4ff,#ff006e); transform: translateY(-5px); }
-
-    .contact-form { background: rgba(255,255,255,.05); backdrop-filter: blur(20px); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255,255,255,.1); }
-    .form-group { margin-bottom: 1.5rem; }
-    .form-group label { display: block; color: white; margin-bottom: .5rem; font-weight: 500; }
-    .form-group input, .form-group textarea {
-      width: 100%; padding: 1rem; border: 1px solid rgba(255,255,255,.2); border-radius: 10px;
-      background: rgba(255,255,255,.05); color: white; font-size: 1rem; transition: all .3s ease;
-    }
-    .form-group input::placeholder, .form-group textarea::placeholder { color: #666; }
-    .form-group input:focus, .form-group textarea:focus {
-      outline: none; background: rgba(255,255,255,.1); border-color: #00d4ff; box-shadow: 0 0 20px rgba(0,212,255,.2);
-    }
-    .form-status { margin-top: .75rem; font-size: .95rem; }
 
     /* Animations */
     @keyframes slideInLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
@@ -264,6 +251,7 @@
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#publications" class="nav-link">Publications</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#work-authorization" class="nav-link">Visa Status</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </div>
@@ -274,8 +262,8 @@
     <div class="hero-content">
       <div class="hero-text">
         <h1>Venkata Krishna Rayalu Garapati</h1>
-        <p class="subtitle">AI Engineer & Research Enthusiast</p>
-        <p>Graduate student at Northeastern University specializing in NLP, Computer Vision, and Large Language Models. Passionate about creating AI solutions that make a real-world impact.</p>
+        <p class="subtitle">AI/ML Software Engineer & Researcher</p>
+        <p>Final-semester M.S. Artificial Intelligence student at Northeastern University with production experience building LLM optimization, evaluation, and deployment workflows for healthcare applications.</p>
         <div class="cta-buttons">
           <a href="#projects" class="btn btn-primary">View My Work</a>
           <a href="#contact" class="btn btn-secondary">Let's Connect</a>
@@ -304,13 +292,13 @@
         <i class="fas fa-user-graduate" style="display:none; font-size: 8rem; color: #00d4ff; position: absolute;"></i>
       </div>
       <div class="about-text">
-        <h3>Artificial Intelligence Graduate Student</h3>
-        <p>I'm currently pursuing my Master's in Artificial Intelligence at Northeastern University with a 3.9 GPA. My journey in AI began during my undergraduate studies in Computer Science with a specialization in AI at Amrita Vishwa Vidyapeetham, where I graduated with First Class Distinction.</p>
-        <p>My work spans across Natural Language Processing, Computer Vision, and Large Language Models. I've contributed to multiple publications in prestigious conferences including ACL, IEEE, and Springer, and have hands-on experience in developing AI-powered applications that solve real-world problems.</p>
-        <p>I'm passionate about advancing the field of AI through research and practical applications, with a particular interest in NLP.</p>
+        <h3>AI/ML Software Engineer in My Final Semester</h3>
+        <p>I'm completing my final semester of the M.S. in Artificial Intelligence at Northeastern University, graduating in December 2026 with a 3.95 GPA. I previously earned my B.Tech. in Computer Science and Engineering (Artificial Intelligence) from Amrita Vishwa Vidyapeetham.</p>
+        <p>Most recently, I worked as a Software Development Intern in Applied AI at DeliverHealth, contributing to production healthcare AI across LLM fine-tuning, SFT/DPO data workflows, prompt optimization, evaluation, inference reliability, agentic applications, and user-facing web and mobile experiences.</p>
+        <p>I enjoy working at the intersection of software engineering and applied AI—turning research ideas into reliable products. My broader work spans NLP, LLMs, computer vision, multimodal learning, accessibility, and four peer-reviewed publications across ACL, IEEE, and Springer venues.</p>
         <div class="stats">
           <div class="stat-item">
-            <span class="stat-number">3.9</span>
+            <span class="stat-number">3.95</span>
             <span class="stat-label">Current GPA</span>
           </div>
           <div class="stat-item">
@@ -329,8 +317,8 @@
       <div class="card">
         <img src="School_college_Link_Box.jpg" alt="Northeastern University" class="edu-card-logo"/>
         <h3 class="card-title">Northeastern University</h3>
-        <p class="card-description">M.S. in Artificial Intelligence • 2024–2026 (expected)</p>
-        <div class="edu-meta">GPA: 3.9/4.0 • Focus: NLP, Computer Vision, LLMs</div>
+        <p class="card-description">M.S. in Artificial Intelligence • Expected December 2026</p>
+        <div class="edu-meta">GPA: 3.95/4.0 • Final semester • Focus: Applied AI, NLP, Computer Vision, LLMs</div>
       </div>
       <div class="card">
         <img src="7CT8zD0q_400x400.jpg" alt="Amrita Vishwa Vidyapeetham" class="edu-card-logo"/>
@@ -348,28 +336,31 @@
       <div class="skill-category">
         <h3><i class="fas fa-code"></i> Programming Languages</h3>
         <div class="skill-tags">
-          <span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">Java</span>
-          <span class="skill-tag">Matlab</span><span class="skill-tag">Git</span>
+          <span class="skill-tag">Python</span><span class="skill-tag">Java</span><span class="skill-tag">SQL</span>
+          <span class="skill-tag">TypeScript</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Swift</span>
         </div>
       </div>
       <div class="skill-category">
         <h3><i class="fas fa-brain"></i> AI/ML Libraries</h3>
         <div class="skill-tags">
           <span class="skill-tag">PyTorch</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">Scikit-Learn</span>
-          <span class="skill-tag">Transformers</span><span class="skill-tag">OpenCV</span><span class="skill-tag">NumPy</span><span class="skill-tag">Pandas</span>
+          <span class="skill-tag">Hugging Face</span><span class="skill-tag">Transformers</span><span class="skill-tag">TRL</span>
+          <span class="skill-tag">LoRA/PEFT</span><span class="skill-tag">DSPy</span><span class="skill-tag">OpenCV</span>
         </div>
       </div>
       <div class="skill-category">
-        <h3><i class="fas fa-cloud"></i> Cloud & Tools</h3>
+        <h3><i class="fas fa-robot"></i> LLM Engineering</h3>
         <div class="skill-tags">
-          <span class="skill-tag">AWS</span><span class="skill-tag">SharePoint</span><span class="skill-tag">Streamlit</span><span class="skill-tag">Groq API</span>
+          <span class="skill-tag">SFT</span><span class="skill-tag">DPO</span><span class="skill-tag">RAG</span>
+          <span class="skill-tag">Prompt Optimization</span><span class="skill-tag">Synthetic Data</span><span class="skill-tag">Model Evaluation</span><span class="skill-tag">vLLM</span>
         </div>
       </div>
       <div class="skill-category">
-        <h3><i class="fas fa-users"></i> Soft Skills</h3>
+        <h3><i class="fas fa-cloud"></i> Software & Platforms</h3>
         <div class="skill-tags">
-          <span class="skill-tag">Problem Solving</span><span class="skill-tag">Analytical Thinking</span>
-          <span class="skill-tag">Communication</span><span class="skill-tag">Teamwork</span><span class="skill-tag">Leadership</span>
+          <span class="skill-tag">FastAPI</span><span class="skill-tag">React</span><span class="skill-tag">Next.js</span>
+          <span class="skill-tag">SwiftUI</span><span class="skill-tag">Docker</span><span class="skill-tag">Git</span>
+          <span class="skill-tag">Azure DevOps</span><span class="skill-tag">CI/CD</span><span class="skill-tag">Streamlit</span>
         </div>
       </div>
     </div>
@@ -380,63 +371,84 @@
     <h2 class="section-title">Projects</h2>
     <div class="cards-grid">
       <div class="card">
-        <h3 class="card-title">Music Reconstruction using Genetic Algorithms</h3>
-        <p class="card-description">Music Reconstruction using Genetic Algorithms and LLMs - a forked project exploring the reconstruction and enhancement of musical compositions. The system decomposes MIDI files into individual components and applies genetic algorithms for optimization, using evolutionary computation principles to evolve musical patterns. Incorporates fitness functions based on harmonic progression, rhythm coherence, and melodic structure, with Large Language Model integration for contextual understanding of musical styles and genres.</p>
+        <h3 class="card-title">AgentsHub — Registry for AI Agents</h3>
+        <p class="card-description">Built a Git-inspired platform for versioning, reviewing, evaluating, and deploying AI agents. The system supports agent registration, pull-request workflows, CI-style evaluation gates, run tracking, and LLM-powered behavioral diffs to make changes in agent behavior easier to review before release.</p>
         <div class="card-tech">
-          <span class="tech-tag">Genetic Algorithms</span><span class="tech-tag">Python</span><span class="tech-tag">LLMs</span><span class="tech-tag">MIDI Processing</span><span class="tech-tag">Audio Analysis</span>
+          <span class="tech-tag">Next.js 15</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Tailwind CSS</span><span class="tech-tag">Anthropic SDK</span><span class="tech-tag">AI Evaluation</span>
         </div>
         <div class="card-links">
-          <a href="https://github.com/VenkataKrishnaGarapati/Music-Reconstruction" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://github.com/VenkataKrishnaGarapati/agentshub" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
       <div class="card">
-        <h3 class="card-title">Color Sorting Robot in Gazebo</h3>
-        <p class="card-description">A robotic automation system developed in Gazebo simulation environment for automated color-based object sorting. The project features a robotic manipulator equipped with computer vision capabilities using OpenCV for real-time color detection and object recognition. Includes path planning algorithms for robot movement, inverse kinematics solutions for object manipulation, and integration with ROS (Robot Operating System) for communication between vision processing, motion planning, and control modules.</p>
+        <h3 class="card-title">EmoLingo — Emotion-Aware Chatbot</h3>
+        <p class="card-description">Contributed to an NLP chatbot that predicts user emotion, conversational tone, and English proficiency using fine-tuned transformer models. My work supported the unified response pipeline and interactive Streamlit experience; this was a collaborative open-source project rather than a repository built solely by me.</p>
         <div class="card-tech">
-          <span class="tech-tag">Gazebo</span><span class="tech-tag">OpenCV</span><span class="tech-tag">Python</span><span class="tech-tag">ROS</span><span class="tech-tag">Computer Vision</span><span class="tech-tag">Robotics</span>
+          <span class="tech-tag">NLP</span><span class="tech-tag">Transformers</span><span class="tech-tag">Emotion Detection</span><span class="tech-tag">Streamlit</span><span class="tech-tag">Contributor</span>
         </div>
         <div class="card-links">
-          <a href="https://github.com/VenkataKrishnaGarapati/Color-sorting-robot-using-Gazebo" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://github.com/VenkataKrishnaGarapati/EmoLingo-ChatBot" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
       <div class="card">
-        <h3 class="card-title">Satellite Image Dehazing Performance Study</h3>
-        <p class="card-description">A comprehensive study evaluating various image dehazing algorithms specifically applied to satellite imagery. The research focuses on atmospheric haze removal techniques for satellite imagery enhancement, implementing and comparing multiple dehazing algorithms including Dark Channel Prior and other state-of-the-art approaches. The study analyzes algorithm performance under varying atmospheric conditions and provides insights for satellite image preprocessing in remote sensing applications.</p>
+        <h3 class="card-title">Semantic-Aware Audio Captioning</h3>
+        <p class="card-description">Extended a Whisper-based audio captioning system with a learned confidence head, confidence-guided beam search, and temperature scaling. Reframed caption correctness using CLAP and FENSE semantic similarity, reducing expected calibration error by 85% while improving caption quality on Clotho v2.</p>
         <div class="card-tech">
-          <span class="tech-tag">OpenCV</span><span class="tech-tag">Image Processing</span><span class="tech-tag">Python</span><span class="tech-tag">Remote Sensing</span><span class="tech-tag">Computer Vision</span>
+          <span class="tech-tag">PyTorch</span><span class="tech-tag">Whisper</span><span class="tech-tag">CLAP</span><span class="tech-tag">FENSE</span><span class="tech-tag">Transformers</span><span class="tech-tag">Clotho v2</span>
         </div>
         <div class="card-links">
-          <a href="https://github.com/VenkataKrishnaGarapati/Performance-of-image-dehazing-algorithms-on-satellite-images" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://github.com/VenkataKrishnaGarapati/Semantic-Aware-Audio-Captioning" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
       <div class="card">
-        <h3 class="card-title">Hand Gesture Computer Control (Socket)</h3>
-        <p class="card-description">An IoT-based human-computer interaction system enabling touchless computer control through hand gesture recognition. Built on Raspberry Pi platform with real-time computer vision processing using OpenCV for gesture detection and tracking. Features socket programming architecture for wireless communication between the Raspberry Pi sensor unit and target computers, enabling applications in presentation control, media playback, and accessibility assistance.</p>
+        <h3 class="card-title">Empirical Study of ML Algorithms</h3>
+        <p class="card-description">Compared linear models, decision trees, random forests, SVM, and SVR across three large classification and regression datasets. Evaluated accuracy, AUC/R², statistical significance, feature ablation, noise robustness, training-size sensitivity, and computational trade-offs to identify when additional model complexity is justified.</p>
         <div class="card-tech">
-          <span class="tech-tag">Raspberry Pi</span><span class="tech-tag">OpenCV</span><span class="tech-tag">Sockets</span><span class="tech-tag">IoT</span><span class="tech-tag">Machine Learning</span>
+          <span class="tech-tag">Python</span><span class="tech-tag">Scikit-Learn</span><span class="tech-tag">Random Forest</span><span class="tech-tag">SVM/SVR</span><span class="tech-tag">Robustness Analysis</span>
         </div>
         <div class="card-links">
-          <a href="https://github.com/VenkataKrishnaGarapati/Socket-programming-for-computer-control-using-Hand-Gestures" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://github.com/VenkataKrishnaGarapati/Empirical-Sudy-Of-ML-algortihms" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
       <div class="card">
-        <h3 class="card-title">Understanding SVM for Binary Classification</h3>
-        <p class="card-description">A comprehensive theoretical and practical study of Support Vector Machines focusing on binary classification problems. The project implements SVM algorithms using mathematical optimization principles, exploring both hard-margin and soft-margin formulations. Utilizes CVX optimization toolbox in MATLAB for solving quadratic programming problems in SVM training, with analysis of kernel functions, hyperparameter tuning strategies, and geometric interpretation of decision boundaries.</p>
-        <div class="card-tech">
-          <span class="tech-tag">SVM</span><span class="tech-tag">Matlab</span><span class="tech-tag">CVX</span><span class="tech-tag">Optimization</span><span class="tech-tag">Machine Learning</span>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/VenkataKrishnaGarapati/Understanding-SVM-for-binary-classification" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a>
-        </div>
+        <h3 class="card-title">Color-Sorting Robot in Gazebo</h3>
+        <p class="card-description">A simulated robotic system for detecting, picking, and sorting objects by color using computer vision, motion control, and a Gazebo-based robotics environment.</p>
+        <div class="card-tech"><span class="tech-tag">Python</span><span class="tech-tag">Gazebo</span><span class="tech-tag">Robotics</span><span class="tech-tag">Computer Vision</span></div>
+        <div class="card-links"><a href="https://github.com/VenkataKrishnaGarapati/Color-sorting-robot-using-Gazebo" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div>
       </div>
       <div class="card">
-        <h3 class="card-title">Skin Cancer Detection AI</h3>
-        <p class="card-description">A medical AI system for skin cancer detection using dermoscopic image analysis. Implemented using Jupyter Notebook, the project employs computer vision techniques for image preprocessing, feature extraction, and lesion segmentation. Built with machine learning models using Scikit-Learn, incorporating feature engineering including texture analysis, asymmetry detection, border irregularity assessment, and color variation analysis based on dermatological criteria for skin cancer detection.</p>
-        <div class="card-tech">
-          <span class="tech-tag">Scikit-Learn</span><span class="tech-tag">Python</span><span class="tech-tag">Computer Vision</span><span class="tech-tag">Medical AI</span><span class="tech-tag">Image Processing</span>
-        </div>
+        <h3 class="card-title">Satellite Image Dehazing Study</h3>
+        <p class="card-description">An experimental comparison of image-dehazing methods for satellite imagery, examining atmospheric-haze removal and preprocessing quality for remote-sensing applications.</p>
+        <div class="card-tech"><span class="tech-tag">Computer Vision</span><span class="tech-tag">Image Processing</span><span class="tech-tag">Remote Sensing</span></div>
+        <div class="card-links"><a href="https://github.com/VenkataKrishnaGarapati/Performance-of-image-dehazing-algorithms-on-satellite-images" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div>
+      </div>
+      <div class="card">
+        <h3 class="card-title">Hand-Gesture Computer Control</h3>
+        <p class="card-description">A touchless computer-control prototype using hand-gesture recognition and socket communication to connect a vision-based input device with a target computer.</p>
+        <div class="card-tech"><span class="tech-tag">OpenCV</span><span class="tech-tag">Sockets</span><span class="tech-tag">IoT</span><span class="tech-tag">Gesture Recognition</span></div>
+        <div class="card-links"><a href="https://github.com/VenkataKrishnaGarapati/Socket-programming-for-computer-control-using-Hand-Gestures" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div>
+      </div>
+      <div class="card">
+        <h3 class="card-title">Music Reconstruction with Genetic Algorithms</h3>
+        <p class="card-description">Contributed to a collaborative exploration of reconstructing musical compositions with evolutionary optimization and LLM-assisted musical context operating on structured MIDI components.</p>
+        <div class="card-tech"><span class="tech-tag">Genetic Algorithms</span><span class="tech-tag">LLMs</span><span class="tech-tag">MIDI</span><span class="tech-tag">Contributor</span></div>
+        <div class="card-links"><a href="https://github.com/VenkataKrishnaGarapati/Music-Reconstruction" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div>
+      </div>
+      <div class="card">
+        <h3 class="card-title">PromptPrint v2.0</h3>
+        <p class="card-description">Contributed to an open-source initiative exploring how to measure and communicate the resource footprint associated with prompts and language-model interactions. My work formed part of the broader project rather than representing sole ownership of the repository.</p>
+        <div class="card-tech"><span class="tech-tag">LLMs</span><span class="tech-tag">Energy Measurement</span><span class="tech-tag">Responsible AI</span><span class="tech-tag">Contributor</span></div>
+        <div class="card-links"><a href="https://github.com/VenkataKrishnaGarapati/PromptPrint-v2.0" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a></div>
+      </div>
+      <div class="card">
+        <h3 class="card-title">iOS Open-Source Contributions</h3>
+        <p class="card-description">Contributed to and worked with selected Swift and UIKit libraries during my internship, including Kumo, Gooey, Alerts, and Bedrock. My involvement focused on understanding existing codebases, debugging integration issues, and supporting mobile and accessibility-related development; I was a contributor, not the original author of these libraries.</p>
+        <div class="card-tech"><span class="tech-tag">Swift</span><span class="tech-tag">UIKit</span><span class="tech-tag">iOS</span><span class="tech-tag">Accessibility</span><span class="tech-tag">Contributor</span></div>
         <div class="card-links">
-          <a href="https://github.com/VenkataKrishnaGarapati/cancer_detect_ai_skincancer" target="_blank" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://github.com/VenkataKrishnaGarapati/Kumo" target="_blank" class="card-link"><i class="fab fa-github"></i> Kumo</a>
+          <a href="https://github.com/VenkataKrishnaGarapati/Gooey" target="_blank" class="card-link"><i class="fab fa-github"></i> Gooey</a>
+          <a href="https://github.com/VenkataKrishnaGarapati/Alerts" target="_blank" class="card-link"><i class="fab fa-github"></i> Alerts</a>
+          <a href="https://github.com/VenkataKrishnaGarapati/Bedrock" target="_blank" class="card-link"><i class="fab fa-github"></i> Bedrock</a>
         </div>
       </div>
     </div>
@@ -497,30 +509,61 @@
     <h2 class="section-title">Professional Experience</h2>
     <div class="timeline">
       <div class="timeline-item">
-        <div class="timeline-date">Nov 2023 – Jul 2024</div>
-        <h3 class="timeline-title">Software Engineer Intern</h3>
-        <div class="timeline-company">Metayage Pvt Ltd, Hyderabad, India</div>
+        <div class="timeline-date">Jan 2026 – Jul 2026</div>
+        <h3 class="timeline-title">Software Development Intern, Applied AI</h3>
+        <div class="timeline-company">DeliverHealth</div>
         <div class="timeline-description">
           <ul>
-            <li>Developed AI-powered disclosure application that reduced processing time by 30%</li>
-            <li>Drafted 20+ AI/ML patents across deep learning, NLP, and computer vision domains for India and USA</li>
-            <li>Analyzed advanced patent technologies including LLMs, CNNs, and generative models</li>
-            <li>Collaborated with cross-functional teams to implement cutting-edge AI solutions</li>
+            <li>Engineered a closed-loop LLM optimization workflow for medical coding in a HIPAA-regulated environment, spanning human feedback, synthetic data, SFT/DPO training, LoRA fine-tuning, evaluation, and model approval.</li>
+            <li>Designed DSPy prompt-optimization experiments using Chain-of-Thought and BootstrapFewShot, reducing inference latency by 40% and improving consistency across evaluation suites.</li>
+            <li>Supported production model migrations by validating confidence scores and prediction reliability across API and user-interface workflows while helping maintain 99.9% uptime.</li>
+            <li>Built agentic and audit-focused features, including debate-style review and expert-override workflows connected to compliance audit trails.</li>
+            <li>Contributed across Python/LLM services, React front ends, Swift/SwiftUI applications, accessibility testing, Docker, Azure DevOps, CI/CD, pull requests, and production reliability improvements.</li>
           </ul>
         </div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-date">Aug 2022 – Apr 2023</div>
+        <div class="timeline-date">Nov 2023 – Jul 2024</div>
+        <h3 class="timeline-title">Patent Engineer Intern</h3>
+        <div class="timeline-company">Metayage Pvt Ltd, Hyderabad, India</div>
+        <div class="timeline-description">
+          <ul>
+            <li>Conducted prior-art research and technical analysis for AI/ML patent filings in the United States and India.</li>
+            <li>Evaluated the patentability of inventions across NLP, computer vision, deep learning, LLMs, and generative models.</li>
+            <li>Translated complex technical concepts into patent-relevant insights supporting attorney drafting and prosecution strategy.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Sep 2022 – Nov 2023</div>
         <h3 class="timeline-title">Research Assistant</h3>
         <div class="timeline-company">Amrita School of Artificial Intelligence, Coimbatore, India</div>
         <div class="timeline-description">
           <ul>
-            <li>Contributed to publications in ACL, IEEE, and Springer conferences</li>
-            <li>Developed computer vision pipelines for medical imaging applications</li>
-            <li>Worked on NLP projects focusing on regional languages</li>
-            <li>Built chatbot emotion detection systems and smart monitoring solutions using AI+IoT</li>
-            <li>Collaborated with faculty and graduate students on cutting-edge research projects</li>
+            <li>Co-authored four peer-reviewed publications across ACL, IEEE, and Springer venues in NLP, computer vision, and multimodal AI.</li>
+            <li>Developed transformer-based models for multilingual and low-resource text classification, including Telugu news categorization.</li>
+            <li>Built computer-vision pipelines with ResNet-18 and EfficientNet for feature extraction, classification, and satellite-image analysis.</li>
+            <li>Developed a semi-supervised flood-detection framework that reduced dependence on labeled satellite imagery.</li>
           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Authorization -->
+  <section id="work-authorization" class="section">
+    <h2 class="section-title">Work Authorization</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <h3 class="card-title"><i class="fas fa-briefcase"></i> U.S. Employment Eligibility</h3>
+        <p class="card-description">I am currently an F-1 student and expect to graduate in December 2026. After graduation, I expect to be eligible to apply for up to 12 months of post-completion Optional Practical Training (OPT). Because my M.S. in Artificial Intelligence is a STEM degree, I also expect to be eligible to apply for the 24-month STEM OPT extension, subject to USCIS and employer requirements. Together, this may provide up to 36 months of F-1 practical-training work authorization.</p>
+        <p class="card-description">For continued U.S. employment beyond my available OPT and STEM OPT authorization, I will require employer sponsorship, such as H-1B or another applicable employment-based status.</p>
+        <div class="card-tech">
+          <span class="tech-tag">F-1 Student</span>
+          <span class="tech-tag">Post-Completion OPT</span>
+          <span class="tech-tag">STEM OPT Eligible</span>
+          <span class="tech-tag">Up to 36 Months</span>
+          <span class="tech-tag">Future Sponsorship Required</span>
         </div>
       </div>
     </div>
@@ -532,7 +575,7 @@
     <div class="contact-content">
       <div class="contact-info">
         <h3>Let's Connect!</h3>
-        <p>I'm always open to discussing AI research, collaboration opportunities, or potential internships. Feel free to reach out!</p>
+        <p>I'm open to full-time Software Engineering, Machine Learning Engineering, Applied AI, and LLM opportunities beginning around my December 2026 graduation. The fastest way to reach me is by email or LinkedIn.</p>
 
         <div class="contact-item">
           <div class="contact-icon"><i class="fas fa-envelope"></i></div>
@@ -540,7 +583,7 @@
         </div>
         <div class="contact-item">
           <div class="contact-icon"><i class="fas fa-phone"></i></div>
-          <div><strong>Phone</strong><br/>+1 (617) 918-3039<br/>+91 6281661928</div>
+          <div><strong>Phone</strong><br/>+1 (617) 918-3039</div>
         </div>
         <div class="contact-item">
           <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
@@ -554,41 +597,12 @@
         </div>
       </div>
 
-      <div class="contact-form">
-        <!-- IMPORTANT: Use an explicit id and remove any global submit blockers -->
-        <form id="contact-form" action="https://formspree.io/f/mwpnwkod" method="POST">
-          <!-- Honeypot (spam protection) -->
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
-          <!-- Redirect or subject (optional) -->
-          <input type="hidden" name="_subject" value="New message from portfolio site"/>
-
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" required/>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <!-- Keep name="email" exactly for Formspree -->
-            <input type="email" id="email" name="email" placeholder="your.email@example.com" required/>
-          </div>
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="What's this about?" required/>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6" placeholder="Your message here..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
-          <div id="form-status" class="form-status" aria-live="polite"></div>
-        </form>
-      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2025 Krishna Rayalu. Crafted with passion and AI precision.</p>
+    <p>&copy; 2026 Krishna Rayalu. Crafted with passion and AI precision.</p>
   </footer>
 
   <script>
@@ -749,34 +763,6 @@
       }
     });
 
-    // ---------- Formspree FIX: async submission with status ----------
-    const form = document.getElementById('contact-form');
-    const statusEl = document.getElementById('form-status');
-
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault(); // handle via fetch so we can show a nice message
-      statusEl.textContent = 'Sending...';
-
-      try {
-        const data = new FormData(form);
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' },
-        });
-
-        if (response.ok) {
-          statusEl.textContent = 'Thank you! Your message has been sent.';
-          form.reset();
-        } else {
-          const resData = await response.json().catch(() => ({}));
-          statusEl.textContent = resData.errors ? resData.errors.map(e => e.message).join(', ') : 'Oops, something went wrong. Please try again.';
-        }
-      } catch (err) {
-        statusEl.textContent = 'Network error. Please check your connection and try again.';
-      }
-    });
-    // ----------------------------------------------------------------
   </script>
 </body>
 </html>
